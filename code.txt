@@ -1,0 +1,34 @@
+-- View --
+
+<div class="col-md-12 mb-3">
+<div class="form-group">
+<label for="exampleFormControlSelect1">Pilih Option:</label>
+<select class="form-control" id="exampleFormControlSelect1" name="item_asset">
+@foreach ($asset as $item)
+<option value="{{ $item->id }}">{{ $item->label_code.', '.$item->data_type_assets->nama_type.', '.$item->brand }}</option>
+@endforeach
+</select>
+</div>
+<div class="form-group">
+<button type="button" class="btn btn-success" id="add-col-button">Tambah Kolom</button>
+</div>
+</div>
+
+
+-- Script --
+
+<div class="col-md-12 mb-3">'+
+'<div class="form-group">'+
+'<label for="exampleFormControlSelect1">Pilih Option:</label>'+
+'<select class="form-control" id="exampleFormControlSelect1" name="option">'+
+'@foreach ($asset as $item)'+
+'<option value="{{ $item->id }}">{{ $item->label_code.', '.$item->data_type_assets->nama_type.', '.$item->brand }}</option>'+
+'@endforeach'+
+</select>'+
+'</div>'+
+'<div class="form-group">'+
+'<button type="button" class="btn btn-danger remove-col-button">'+
+'Hapus Kolom'+
+'</button>'+
+'</div>'+
+'</div>
